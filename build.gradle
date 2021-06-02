@@ -1,0 +1,61 @@
+plugins {
+    id 'java'
+    id 'maven'
+    id 'io.qameta.allure' version '2.8.1'
+}
+
+def allureVersion = "2.14.0"
+def testngVersion = "7.4.0"
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+allure {
+    autoconfigure = false
+    version = allureVersion
+    aspectjweaver = true
+    clean = true
+}
+
+test {
+    ignoreFailures = true
+    def runSuite = project.hasProperty("suite")
+
+    useTestNG {
+        if (runSuite) {
+            def suiteToRun = project.getProperty("suite")
+            suites "src/test/resources/"+suiteToRun
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+
+    // TestNG
+    testImplementation("org.testng:testng:$testngVersion")
+
+    // Rest-Assured
+    implementation group: 'io.rest-assured', name: 'rest-assured', version: '4.3.0'
+
+    // Allure
+    implementation group: 'io.qameta.allure', name: 'allure-testng', version: '2.14.0'
+
+    // Jackson
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.12.1'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.12.1'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.1'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+    testCompileOnly 'org.projectlombok:lombok:1.18.16'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
+}
+
+
+
