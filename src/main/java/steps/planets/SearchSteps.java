@@ -1,4 +1,4 @@
-package planets.search;
+package steps.planets;
 
 import entities.Planet;
 import entities.SearchResult;

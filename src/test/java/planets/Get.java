@@ -1,11 +1,12 @@
-package planets.get;
+package planets;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import common.BaseSteps;
+import steps.common.BaseSteps;
 import entities.Planet;
 import io.qameta.allure.Description;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
+import steps.planets.GetSteps;
 import utils.TestHelper;
 
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package common;
+package steps.common;
 
 import io.qameta.allure.Step;
 

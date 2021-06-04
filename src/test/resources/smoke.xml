@@ -8,8 +8,8 @@
             </run>
         </groups>
         <classes>
-            <class name="planets.get.Get"/>
-            <class name="planets.search.Search"/>
+            <class name="planets.Get"/>
+            <class name="planets.Search"/>
         </classes>
     </test>
 </suite>

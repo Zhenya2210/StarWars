@@ -1,10 +1,11 @@
-package planets.search;
+package planets;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import entities.Planet;
 import io.qameta.allure.Description;
 import org.testng.annotations.Test;
+import steps.planets.SearchSteps;
 import utils.TestHelper;
 
 import java.io.IOException;

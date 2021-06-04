@@ -37,7 +37,7 @@ repositories {
 dependencies {
 
     // TestNG
-    testImplementation("org.testng:testng:$testngVersion")
+    implementation("org.testng:testng:$testngVersion")
 
     // Rest-Assured
     implementation group: 'io.rest-assured', name: 'rest-assured', version: '4.3.0'

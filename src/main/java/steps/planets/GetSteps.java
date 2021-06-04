@@ -1,4 +1,4 @@
-package planets.get;
+package steps.planets;
 
 import entities.Planet;
 import io.qameta.allure.Step;
